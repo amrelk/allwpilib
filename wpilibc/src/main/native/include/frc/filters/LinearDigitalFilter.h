@@ -11,6 +11,7 @@
 #include <vector>
 
 #include <wpi/ArrayRef.h>
+#include <wpi/deprecated.h>
 
 #include "frc/circular_buffer.h"
 #include "frc/filters/Filter.h"
@@ -76,6 +77,7 @@ class LinearDigitalFilter : public Filter {
    * @param ffGains The "feed forward" or FIR gains
    * @param fbGains The "feed back" or IIR gains
    */
+  WPI_DEPRECATED("Use LinearFilter class instead.")
   LinearDigitalFilter(PIDSource& source, wpi::ArrayRef<double> ffGains,
                       wpi::ArrayRef<double> fbGains);
 
@@ -86,6 +88,7 @@ class LinearDigitalFilter : public Filter {
    * @param ffGains The "feed forward" or FIR gains
    * @param fbGains The "feed back" or IIR gains
    */
+  WPI_DEPRECATED("Use LinearFilter class instead.")
   LinearDigitalFilter(std::shared_ptr<PIDSource> source,
                       wpi::ArrayRef<double> ffGains,
                       wpi::ArrayRef<double> fbGains);
